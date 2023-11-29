@@ -17,6 +17,7 @@ import dominio.Estado;
 import dominio.Pais;
 import dominio.Telefone;
 import negocio.IStrategy;
+import negocio.impl.GerarLog;
 import negocio.impl.ValidarDadosObrigatorios;
 import negocio.impl.ValidarEnderecos;
 import negocio.impl.ValidarExistencia;
@@ -40,6 +41,7 @@ public class Facade implements IFacade {
 		ValidarExistencia vExistencia = new ValidarExistencia();
 		ValidarEnderecos vEnderecos = new ValidarEnderecos();
 		ValidarSenha vSenha = new ValidarSenha();
+		GerarLog gerarLog = new GerarLog();
 		
 
 		List<IStrategy> rnsSalvarEndereco = new ArrayList<IStrategy>();
@@ -69,6 +71,7 @@ public class Facade implements IFacade {
 		rnsSalvarCliente.add(vExistencia);
 		rnsSalvarCliente.add(vEnderecos);
 		rnsSalvarCliente.add(vSenha);
+		rnsSalvarCliente.add(gerarLog);
 		
 		this.rnsSalvar.put(Cliente.class.getName(), rnsSalvarCliente);		
 		this.rnsAlterar.put(Cliente.class.getName(), rnsAlterarCliente);
