@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import controle.IFacade;
 import dao.*;
 import dominio.Bairro;
+import dominio.CartaoCredito;
 import dominio.Cidade;
 import dominio.Cliente;
 import dominio.Endereco;
@@ -58,6 +59,7 @@ public class Facade implements IFacade {
 		IDAO estadoDAO = new EstadoDAO();
 		IDAO paisDAO = new PaisDAO();
 		IDAO telefoneDAO = new TelefoneDAO();
+		IDAO cartaoDeCreditoDAO = new CartaoDeCreditoDAO();
 		
 		this.DAOs.put(Cliente.class.getName(), clienteDAO);
 		this.DAOs.put(Endereco.class.getName(), enderecoDAO);
@@ -66,6 +68,7 @@ public class Facade implements IFacade {
 		this.DAOs.put(Estado.class.getName(), estadoDAO);
 		this.DAOs.put(Pais.class.getName(), paisDAO);
 		this.DAOs.put(Telefone.class.getName(), telefoneDAO);
+		this.DAOs.put(CartaoCredito.class.getName(), cartaoDeCreditoDAO);
 		
 		rnsSalvarCliente.add(vDadosObrigatorios);
 		rnsSalvarCliente.add(vExistencia);
